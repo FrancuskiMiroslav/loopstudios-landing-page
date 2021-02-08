@@ -1,0 +1,16 @@
+$mainFont: 'Alata', sans-serif;
+$secondaryFont: 'Josefin Sans', cursive;
+
+@import url('https://fonts.googleapis.com/css2?family=Alata&display=swap');
+
+@import url('https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@300&display=swap');
+
+$darkGrayClr: hsl(0, 0%, 55%);
+$veryDarkGrayClr: hsl(0, 0%, 41%);
+
+$backgroundOpacity: 0.85;
+
+$min-vw: 375px;
+$max-vw: 1440px;
+$min_font: 12px;
+$max_font: 50px;
