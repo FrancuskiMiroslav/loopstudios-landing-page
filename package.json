@@ -4,6 +4,7 @@
 	"description": "",
 	"main": "main.js",
 	"scripts": {
+		"predeploy": "npm run build",
 		"gulp": "gulp --development",
 		"build": "gulp build --production",
 		"deploy": "gh-pages -d dist"
@@ -13,7 +14,7 @@
 		"name": "Francuski Miroslav",
 		"url": "https://francuskimiroslav.com"
 	},
-	"homepage": "https://francuskimiroslav.github.io/MyPortfolio/",
+	"homepage": "https://francuskimiroslav.github.io/loopstudios-landing-page/",
 	"license": "ISC",
 	"devDependencies": {
 		"@babel/core": "^7.10.2",

@@ -1,9 +1,9 @@
-.button {
+%button {
 	display: inline-block;
 	border: none;
 	color: #fff;
 	text-decoration: none;
-	background-color: $secondaryClr;
+	background-color: $darkGrayClr;
 	padding: 15px 45px;
 	font-size: 13px;
 	text-transform: uppercase;
@@ -23,7 +23,7 @@
 		height: 4px;
 		bottom: 0;
 		width: 100%;
-		background-color: darken($primaryClr, 50%);
+		background-color: darken($veryDarkGrayClr, 50%);
 		opacity: 0.18;
 		border-bottom-left-radius: 2px;
 		border-bottom-right-radius: 2px;
@@ -37,16 +37,96 @@
 	}
 
 	&:hover {
-		background-color: lighten($primaryClr, 5%);
+		background-color: lighten($veryDarkGrayClr, 5%);
 		&::after {
 			opacity: 0.22;
 		}
 	}
 
 	&:active {
-		background-color: darken($primaryClr, 5%);
+		background-color: darken($veryDarkGrayClr, 5%);
 		&::after {
 			opacity: 0.32;
+		}
+	}
+}
+
+.menu-btn {
+	display: none;
+	min-width: 20px;
+	min-height: 15px;
+	align-items: center;
+	justify-content: center;
+	position: relative;
+	cursor: pointer;
+	transition: 0.5s all ease-in-out;
+
+	&:hover {
+		.menu-btn__burger {
+			&::before {
+				transform: rotate(-360deg);
+				background-color: #ffffff;
+			}
+
+			&::after {
+				transform: rotate(360deg);
+				background-color: #ffffff;
+			}
+		}
+	}
+
+	@include breakpoint-max(800) {
+		display: flex;
+		margin-left: 20px;
+
+		&.clicked {
+			transition: 0.5s all ease-in-out;
+			.menu-btn__burger {
+				transform: rotate(45deg);
+				background-color: #ffffff;
+
+				&::before {
+					transform: rotate(-90deg);
+					background-color: #ffffff;
+				}
+
+				&::after {
+					top: 0px;
+					transform: translateY(-5000px);
+					background-color: #ffffff;
+				}
+			}
+
+			&:hover {
+				.menu-btn__burger {
+					transform: rotate(-360deg);
+				}
+			}
+		}
+	}
+
+	&__burger {
+		height: 3px;
+		width: 100%;
+		background-color: #ffffff;
+		transition: 0.5s all ease-in-out;
+
+		&::before,
+		&::after {
+			position: absolute;
+			content: '';
+			background-color: #ffffff;
+			height: 3px;
+			width: 100%;
+			transition: 0.5s all ease-in-out;
+		}
+
+		&::before {
+			bottom: 0px;
+		}
+
+		&::after {
+			top: 0px;
 		}
 	}
 }
