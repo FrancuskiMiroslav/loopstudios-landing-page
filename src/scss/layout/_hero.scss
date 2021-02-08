@@ -1,5 +1,5 @@
 .hero {
-	background-image: url(../../assets/images/desktop/image-hero.jpg);
+	background-image: url(./assets/images/desktop/image-hero.jpg);
 	background-position: top center;
 	background-repeat: no-repeat;
 	background-size: cover;
@@ -8,7 +8,7 @@
 	position: relative;
 
 	@include breakpoint-max(600) {
-		background-image: url(../../assets/images/mobile/image-hero.jpg);
+		background-image: url(./assets/images/mobile/image-hero.jpg);
 	}
 
 	&::before {
