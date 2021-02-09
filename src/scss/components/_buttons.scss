@@ -53,8 +53,8 @@
 
 .menu-btn {
 	display: none;
-	min-width: 20px;
-	min-height: 15px;
+	min-width: 25px;
+	max-height: 18px;
 	align-items: center;
 	justify-content: center;
 	position: relative;
@@ -88,10 +88,11 @@
 				&::before {
 					transform: rotate(-90deg);
 					background-color: #ffffff;
+					bottom: 0px;
 				}
 
 				&::after {
-					top: 0px;
+					top: 8px;
 					transform: translateY(-5000px);
 					background-color: #ffffff;
 				}
@@ -122,11 +123,11 @@
 		}
 
 		&::before {
-			bottom: 0px;
+			bottom: 8px;
 		}
 
 		&::after {
-			top: 0px;
+			top: 8px;
 		}
 	}
 }
