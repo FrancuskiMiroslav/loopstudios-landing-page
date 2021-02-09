@@ -30,6 +30,7 @@
 			&::before {
 				content: '';
 				position: absolute;
+				min-height: 100vh;
 				width: 100vw;
 				top: 0;
 				bottom: 0;
@@ -43,6 +44,7 @@
 			}
 
 			&.overlay {
+				overflow-x: hidden;
 				&:before {
 					content: '';
 					position: absolute;
@@ -85,6 +87,14 @@
 		}
 	}
 
+	&__nav {
+		@include breakpoint-max(800) {
+			position: absolute;
+			left: 25px;
+			top: 50%;
+		}
+	}
+
 	&__list {
 		display: flex;
 		gap: 35px;
@@ -93,13 +103,18 @@
 
 		@include breakpoint-max(800) {
 			opacity: 0;
-			left: 0;
+			left: 20px;
 			position: absolute;
 			flex-direction: column;
+			gap: 25px;
+			top: 100px;
+			align-items: flex-start;
 
 			&.show {
 				opacity: 1;
 				left: 0;
+				top: 50vh;
+				transform: translateY(-25vh);
 			}
 		}
 
@@ -132,6 +147,8 @@
 
 			@include breakpoint-max(800) {
 				text-transform: uppercase;
+				font-weight: 300;
+				font-family: $secondaryFont;
 			}
 		}
 	}
