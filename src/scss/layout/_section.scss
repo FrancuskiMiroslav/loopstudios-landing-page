@@ -1,1 +1,57 @@
+.overlap {
+	@include wrapper(1165, 25);
+	display: flex;
+	min-height: 820px;
+	padding: 160px 25px;
+	position: relative;
+	overflow: hidden;
 
+	@include breakpoint-max(900) {
+		flex-direction: column;
+		padding: 95px 25px;
+		min-height: auto;
+	}
+
+	&__left {
+		width: 730px;
+		max-width: 100%;
+
+		@include breakpoint-max(900) {
+			width: 100%;
+		}
+	}
+
+	&__right {
+		position: absolute;
+		left: 580px;
+		top: 350px;
+		background-color: #ffffff;
+		padding: 9%;
+
+		@include breakpoint-max(900) {
+			position: static;
+			text-align: center;
+		}
+	}
+
+	&__right-title {
+		@include fluid-typo(375px, 1440px, 32px, 45px);
+		text-transform: uppercase;
+		font-family: $secondaryFont;
+		font-weight: 300;
+		margin-bottom: 40px;
+
+		@include breakpoint-max(900) {
+			margin-bottom: 25px;
+		}
+	}
+
+	&__right-text {
+		@include fluid-typo(375px, 1440px, 14px, 13px);
+		color: $darkGrayClr;
+		line-height: 22px;
+	}
+	img {
+		width: 100%;
+	}
+}

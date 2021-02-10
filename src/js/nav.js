@@ -1,5 +1,5 @@
 document.addEventListener('DOMContentLoaded', function () {
-	const headerContainer = document.getElementById('header-container');
+	const heroNav = document.getElementById('hero-nav');
 	const stickyHeader = document.getElementById('sticky-header');
 	const menuBtn = document.getElementById('menu-btn');
 	const navList = document.getElementById('nav-list');
@@ -16,7 +16,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
 	menuBtn.addEventListener('click', (e) => {
 		menuBtn.classList.toggle('clicked');
-		headerContainer.classList.toggle('overlay');
+		heroNav.classList.toggle('overlay');
 		navList.classList.toggle('show');
 	});
 });

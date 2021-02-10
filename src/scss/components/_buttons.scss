@@ -59,17 +59,17 @@
 	justify-content: center;
 	position: relative;
 	cursor: pointer;
-	transition: 0.5s all ease-in-out;
+	transition: 0.8s all ease-in-out;
 
 	&:hover {
 		.menu-btn__burger {
 			&::before {
-				transform: rotate(-360deg);
+				transform: rotate(-180deg);
 				background-color: #ffffff;
 			}
 
 			&::after {
-				transform: rotate(360deg);
+				transform: rotate(180deg);
 				background-color: #ffffff;
 			}
 		}
@@ -100,7 +100,7 @@
 
 			&:hover {
 				.menu-btn__burger {
-					transform: rotate(-360deg);
+					transform: rotate(-180deg);
 				}
 			}
 		}
