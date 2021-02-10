@@ -1,10 +1,9 @@
 %button {
 	display: inline-block;
 	border: none;
-	color: #fff;
 	text-decoration: none;
-	background-color: $darkGrayClr;
-	padding: 15px 45px;
+	background-color: transparent;
+	padding: 15px 40px;
 	font-size: 13px;
 	text-transform: uppercase;
 	font-weight: 600;
@@ -12,39 +11,27 @@
 	border-radius: 2px;
 	text-align: center;
 	position: relative;
-	outline: none;
-	transition: background-color 0.1s ease;
+	outline: 1px solid black;
+	transition: background-color 0.3s ease;
 	cursor: pointer;
+	font-family: $secondaryFont;
 
-	&::after {
-		transition: background-color 0.2s ease;
-		position: absolute;
-		content: '';
-		height: 4px;
-		bottom: 0;
-		width: 100%;
-		background-color: darken($veryDarkGrayClr, 50%);
-		opacity: 0.18;
-		border-bottom-left-radius: 2px;
-		border-bottom-right-radius: 2px;
-		left: 0;
-	}
-
-	&:focus,
 	&:hover {
 		text-decoration: none;
 		color: #fff;
 	}
 
 	&:hover {
-		background-color: lighten($veryDarkGrayClr, 5%);
+		background-color: #000000;
 		&::after {
 			opacity: 0.22;
 		}
 	}
 
+	&:focus,
 	&:active {
 		background-color: darken($veryDarkGrayClr, 5%);
+		color: #ffffff;
 		&::after {
 			opacity: 0.32;
 		}

@@ -26,7 +26,7 @@
 		left: 580px;
 		top: 350px;
 		background-color: #ffffff;
-		padding: 9%;
+		padding: 8.5%;
 
 		@include breakpoint-max(900) {
 			position: static;
@@ -53,5 +53,79 @@
 	}
 	img {
 		width: 100%;
+	}
+}
+
+.grid {
+	@include wrapper(1165, 25);
+	min-height: 1060px;
+	text-transform: uppercase;
+	padding-bottom: 185px;
+
+	&__header {
+		display: flex;
+		justify-content: space-between;
+		align-items: center;
+		margin-bottom: 80px;
+	}
+
+	&__title {
+		@include fluid-typo(375px, 1440px, 14px, 36px);
+		font-family: $secondaryFont;
+		font-weight: 300;
+	}
+
+	&__btn {
+		@extend %button;
+	}
+
+	&__boxes {
+		display: grid;
+		grid-template-columns: repeat(auto-fit, minmax(256px, 1fr));
+		gap: 30px;
+	}
+
+	&__box {
+		min-height: 460px;
+		background-image: url(./assets/images/desktop/image-from-above.jpg);
+		background-size: cover;
+		cursor: pointer;
+		position: relative;
+		display: flex;
+		padding: 40px;
+
+		&:hover {
+			background-image: linear-gradient(
+					rgba(255, 255, 255, 0.7),
+					rgba(255, 255, 255, 0.7)
+				),
+				url(./assets/images/desktop/image-from-above.jpg);
+
+			.grid__box-title {
+				color: #000000;
+			}
+		}
+
+		@include breakpoint-max(609) {
+			min-height: auto;
+			background-image: url(./assets/images/mobile/image-from-above.jpg);
+
+			&:hover {
+				background-image: linear-gradient(
+						rgba(255, 255, 255, 0.7),
+						rgba(255, 255, 255, 0.7)
+					),
+					url(./assets/images/mobile/image-from-above.jpg);
+			}
+		}
+	}
+
+	&__box-title {
+		color: #ffffff;
+		font-weight: 300;
+		font-family: $secondaryFont;
+		@include fluid-typo(375px, 1440px, 32px, 34px);
+		align-self: flex-end;
+		max-width: 175px;
 	}
 }
