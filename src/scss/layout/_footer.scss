@@ -10,14 +10,32 @@
 		width: 100%;
 		justify-content: space-between;
 		padding: 45px 25px;
+		flex-wrap: wrap;
+
+		@include breakpoint-max(800) {
+			text-align: center;
+			justify-content: center;
+			flex-direction: column;
+			padding: 55px 25px;
+		}
 	}
 
 	&__logo {
 		margin-bottom: 30px;
+
+		@include breakpoint-max(800) {
+			margin-bottom: 35px;
+		}
 	}
 
 	&__nav-list {
 		@extend %nav-list;
+		gap: 25px;
+
+		@include breakpoint-max(800) {
+			flex-direction: column;
+			margin-bottom: 50px;
+		}
 
 		&-item {
 			@extend %-item;
@@ -25,6 +43,10 @@
 
 		&-link {
 			@extend %-link;
+
+			@include fluid-typo(375px, 1440px, 16px, 22px);
+			font-weight: 400;
+			text-transform: capitalize;
 		}
 	}
 
@@ -37,6 +59,11 @@
 		&-copyright {
 			color: $darkGrayClr;
 		}
+
+		@include breakpoint-max(800) {
+			justify-content: center;
+			align-items: center;
+		}
 	}
 
 	&__social-icons-list {
@@ -46,6 +73,10 @@
 		justify-content: center;
 		transition: 1s ease-in-out all;
 		@extend %nav-list;
+
+		@include breakpoint-max(800) {
+			margin-bottom: 20px;
+		}
 
 		&-item {
 			@extend %-item;

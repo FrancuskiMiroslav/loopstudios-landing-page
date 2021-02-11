@@ -130,6 +130,13 @@
 
 		&-link {
 			@extend %-link;
+
+			@include breakpoint-max(800) {
+				font-family: $secondaryFont;
+				font-size: 22px;
+				font-weight: 300;
+				text-transform: uppercase;
+			}
 		}
 	}
 

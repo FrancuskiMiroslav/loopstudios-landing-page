@@ -28,13 +28,5 @@
 
 	%-link {
 		color: #ffffff;
-		text-transform: capitalize;
-
-		@include breakpoint-max(800) {
-			text-transform: uppercase;
-			font-weight: 300;
-			font-family: $secondaryFont;
-			font-size: 22px;
-		}
 	}
 }
