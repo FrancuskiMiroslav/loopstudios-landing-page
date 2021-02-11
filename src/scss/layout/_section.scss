@@ -61,6 +61,7 @@
 	min-height: 1060px;
 	text-transform: uppercase;
 	padding-bottom: 185px;
+	position: relative;
 
 	&__header {
 		display: flex;
@@ -70,13 +71,24 @@
 	}
 
 	&__title {
-		@include fluid-typo(375px, 1440px, 14px, 36px);
+		@include fluid-typo(375px, 1440px, 36px, 36px);
 		font-family: $secondaryFont;
 		font-weight: 300;
+
+		@include breakpoint-max(600) {
+			margin: 0 auto;
+		}
 	}
 
 	&__btn {
 		@extend %button;
+
+		@include breakpoint-max(600) {
+			position: absolute;
+			bottom: 75px;
+			left: 50%;
+			transform: translateX(-50%);
+		}
 	}
 
 	&__boxes {
@@ -86,46 +98,77 @@
 	}
 
 	&__box {
-		min-height: 460px;
-		background-image: url(./assets/images/desktop/image-from-above.jpg);
+		height: 460px;
 		background-size: cover;
 		cursor: pointer;
 		position: relative;
 		display: flex;
-		padding: 40px;
+
+		&:before {
+			content: '';
+			position: absolute;
+			width: 0%;
+			background-color: rgba(255, 255, 255, 0.7);
+			transition: 1s ease all;
+			left: 0;
+			right: 0;
+			top: 0;
+			bottom: 0;
+			z-index: 2;
+		}
+
+		&:after {
+			content: '';
+			position: absolute;
+			width: 100%;
+			background-color: rgba(0, 0, 0, 0.4);
+			transition: 1s ease all;
+			left: 0;
+			right: 0;
+			top: 0;
+			bottom: 0;
+			z-index: 0;
+		}
 
 		&:hover {
-			background-image: linear-gradient(
-					rgba(255, 255, 255, 0.7),
-					rgba(255, 255, 255, 0.7)
-				),
-				url(./assets/images/desktop/image-from-above.jpg);
+			&:before {
+				width: 100%;
+				z-index: 3;
+			}
 
 			.grid__box-title {
 				color: #000000;
+				z-index: 5;
 			}
 		}
 
-		@include breakpoint-max(609) {
-			min-height: auto;
-			background-image: url(./assets/images/mobile/image-from-above.jpg);
-
-			&:hover {
-				background-image: linear-gradient(
-						rgba(255, 255, 255, 0.7),
-						rgba(255, 255, 255, 0.7)
-					),
-					url(./assets/images/mobile/image-from-above.jpg);
-			}
+		@include breakpoint-max(600) {
+			height: 120px;
 		}
+	}
+
+	&__box-img {
+		width: 100%;
+		object-fit: cover;
 	}
 
 	&__box-title {
 		color: #ffffff;
 		font-weight: 300;
 		font-family: $secondaryFont;
-		@include fluid-typo(375px, 1440px, 32px, 34px);
+		@include fluid-typo(375px, 1440px, 24px, 34px);
 		align-self: flex-end;
 		max-width: 175px;
+		z-index: 1;
+		transition: 1s ease all;
+		position: absolute;
+		left: 40px;
+		bottom: 40px;
+
+		@include breakpoint-max(600) {
+			max-width: 130px;
+			left: 20px;
+			bottom: 20px;
+		}
 	}
 }
