@@ -11,16 +11,28 @@ document.addEventListener('DOMContentLoaded', function () {
 			.map((box) => {
 				const { id, title, image, imageMob } = box;
 
+				window.onresize = function () {
+					let windowWidth = window.innerWidth;
+
+					if (windowWidth > 600) {
+						return image;
+					}
+
+					if (windowWidth < 600) {
+						return imageMob;
+					}
+				};
+
 				return `
 					<div class="grid__box">
 						<img 
 							class="grid__box-img"
-							src=" ${window.innerWidth > 600 ? image : imageMob}"
+							src="${window.innerWidth < 600 ? imageMob : image}"
 							alt="${title}"
 						/>
 						<h4 class="grid__box-title">${title}</h4>
 					</div>
-			`;
+					`;
 			})
 			.join('');
 	};

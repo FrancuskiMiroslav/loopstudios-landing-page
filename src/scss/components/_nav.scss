@@ -1,1 +1,40 @@
+%nav-list {
+	display: flex;
+	gap: 35px;
+	align-items: center;
+	transition: 1s ease-in-out all;
 
+	%-item {
+		position: relative;
+
+		&:hover:before {
+			width: 60%;
+			opacity: 1;
+		}
+
+		&::before {
+			position: absolute;
+			bottom: -10px;
+			left: 50%;
+			transform: translateX(-50%);
+			content: '';
+			border-bottom: 2px solid #fff;
+			width: 0%;
+			height: 2px;
+			opacity: 0;
+			transition: 0.3s all ease-in-out;
+		}
+	}
+
+	%-link {
+		color: #ffffff;
+		text-transform: capitalize;
+
+		@include breakpoint-max(800) {
+			text-transform: uppercase;
+			font-weight: 300;
+			font-family: $secondaryFont;
+			font-size: 22px;
+		}
+	}
+}
