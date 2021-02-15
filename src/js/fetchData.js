@@ -20,7 +20,9 @@ document.addEventListener('DOMContentLoaded', function () {
 						<picture class="grid__picture">
 							<source media="(max-width:599px)" srcset="${imageMob}">
                         	<source media="(min-width:600px)" srcset="${image}">
-							<img src="${image}" class="grid__box-img" alt="${title}"/>
+							<img src="${
+								window.innerWidth >= 600 ? image : imageMob
+							}" class="grid__box-img" alt="${title}"/>
 						</picture>		
 						<h4 class="grid__box-title">${title}</h4>
 					</div>
