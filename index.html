@@ -62,14 +62,20 @@
 		<main>
 			<section class="overlap">
 				<div class="overlap__left">
-					<img
-						src="./assets/images/mobile/image-interactive-mobile.jpg"
-						srcset="
-							./assets/images/mobile/image-interactive-mobile.jpg   654w,
-							./assets/images/desktop/image-interactive-desktop.jpg 731w
-						"
-						alt="man using VR"
-					/>
+					<picture class="grid__picture">
+						<source
+							media="(max-width:599px)"
+							srcset="./assets/images/mobile/image-interactive-mobile.jpg"
+						/>
+						<source
+							media="(min-width:600px)"
+							srcset="./assets/images/desktop/image-interactive-desktop.jpg"
+						/>
+						<img
+							src="./assets/images/mobile/image-interactive-mobile.jpg"
+							alt="man using VR"
+						/>
+					</picture>
 				</div>
 
 				<div class="overlap__right">
