@@ -2,10 +2,14 @@ document.addEventListener('DOMContentLoaded', function () {
 	const gridBoxes = document.getElementById('grid-boxes');
 	const URL = './js/creations.json';
 
+	const localUrlJSON = require('./creations.json');
+
 	const getCreationsData = async () => {
-		const response = await fetch(URL);
+		/* const response = await fetch(URL);
 		const data = await response.json();
-		const boxes = data.boxes;
+		const boxes = data.boxes; */
+
+		const boxes = localUrlJSON.boxes;
 
 		gridBoxes.innerHTML = boxes
 			.map((box) => {
